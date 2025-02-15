@@ -131,7 +131,7 @@ function addBookSubmit(event) {
     // Clear input fields
     title.value = "";
     author.value = "";
-    numPages = "";
+    numPages.value = "";
     isRead.checked = false;
 
     // Close dialog
