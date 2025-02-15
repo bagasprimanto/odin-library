@@ -104,6 +104,8 @@ function initializeMyLibrary() {
     addBookToLibrary("Elon Musk", "Walter Isaacson", 688, true);
     addBookToLibrary("Filosofi Teras", "Henry Manampiring", 1120, false);
     addBookToLibrary("Sapiens", "Yuval Noah Harari", 1520, true);
+    addBookToLibrary("Bumi Manusia", "Pramoedya Ananta Toer", 330, true);
+
 
     // Add event listeners
     addBookBtn.addEventListener("click", () => {
@@ -114,4 +116,5 @@ function initializeMyLibrary() {
     displayLibrary();
 }
 
+// Initialize My Library web page
 initializeMyLibrary();
