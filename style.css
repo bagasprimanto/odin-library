@@ -158,3 +158,48 @@ h1 {
     display: flex;
     gap: 8px;
 }
+
+/* Dialog styles */
+
+dialog.add-book-dialog {
+    margin: auto;
+    padding: 32px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+dialog.add-book-dialog::backdrop {
+    background-color: #000000;
+    opacity: 0.5;
+}
+
+dialog.add-book-dialog div.form-container {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+dialog.add-book-dialog h2 {
+    margin-bottom: 16px;
+}
+
+dialog.add-book-dialog div.form-container .form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+dialog.add-book-dialog input[type="text"],
+dialog.add-book-dialog input[type="number"] {
+    appearance: none;
+    border: 1px solid black;
+    background-color: rgb(246, 246, 246);
+    border-radius: 10px;
+    width: 32ch;
+    padding: 4px;
+}
+
+dialog.add-book-dialog .form-control.buttons div {
+    display: flex;
+    gap: 16px;
+}

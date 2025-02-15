@@ -4,6 +4,11 @@ const myLibrary = [];
 // Book table
 const bookTable = document.querySelector(".table");
 
+// Dialog
+const addBookDialog = document.querySelector("dialog.add-book-dialog");
+const addBookBtn = document.querySelector("button.add-book");
+const addBookSubmitBtn = document.querySelector(".add-book-dialog button.add-book-submit");
+
 // Constructor for Books
 function Book(title, author, numPages, isRead) {
 
@@ -99,14 +104,13 @@ function initializeMyLibrary() {
     addBookToLibrary("Elon Musk", "Walter Isaacson", 688, true);
     addBookToLibrary("Filosofi Teras", "Henry Manampiring", 1120, false);
     addBookToLibrary("Sapiens", "Yuval Noah Harari", 1520, true);
-    addBookToLibrary("Bumi Manusia", "Pramoedya Ananta Toer", 330, false);
-    addBookToLibrary("Bumi Manusia", "Pramoedya Ananta Toer", 330, false);
-    addBookToLibrary("Bumi Manusia", "Pramoedya Ananta Toer", 330, false);
-    addBookToLibrary("Bumi Manusia", "Pramoedya Ananta Toer", 330, false);
-    addBookToLibrary("Bumi Manusia", "Pramoedya Ananta Toer", 330, false);
 
     // Display the books
     displayLibrary();
 }
 
 initializeMyLibrary();
+
+addBookBtn.addEventListener("click", () => {
+    addBookDialog.showModal();
+})

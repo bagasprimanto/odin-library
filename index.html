@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <div class="top-header">
         <h1>Welcome to My Library!</h1>
         <div>This is a collection of books I have read or want to read in the future.</div>
@@ -18,7 +19,7 @@
     <div class="books-list">
         <div class="top-row">
             <h2>Books list:</h2>
-            <div>
+            <div class="button-container">
                 <button type="button" class="add-book">
                     Add Book
                 </button>
@@ -46,6 +47,39 @@
             </div> -->
         </div>
     </div>
+
+    <!-- Dialog for Adding a Book -->
+    <dialog class="add-book-dialog">
+        <div class="form-container">
+            <h2>Add a new book here!</h2>
+            <form>
+                <div class="form-control input-title">
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" id="title">
+                </div>
+                <div class="form-control input-author">
+                    <label for="author">Author:</label>
+                    <input type="text" name="author" id="author">
+                </div>
+                <div class="form-control input-num-pages">
+                    <label for="num-pages">Number of Pages:</label>
+                    <input type="number" name="num-pages" id="num-pages">
+                </div>
+                <div class="form-control input-read">
+                    <div>
+                        <input type="checkbox" name="num-pages" id="num-pages">
+                        <label for="read">I have read this book</label>
+                    </div>
+                </div>
+                <div class="form-control buttons">
+                    <div>
+                        <button type="submit" class="add-book-submit">Add Book</button>
+                        <button type="submit" formmethod="dialog">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </dialog>
 
     <script src="script.js"></script>
 </body>
