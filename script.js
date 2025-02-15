@@ -4,11 +4,14 @@ const myLibrary = [];
 // Book table
 const bookTable = document.querySelector(".table");
 
-// Dialog
+// HTML elements
+// Add Book Dialog
 const addBookDialog = document.querySelector("dialog.add-book-dialog");
-const addBookBtn = document.querySelector("button.add-book");
 const addBookForm = document.querySelector(".add-book-dialog form");
 const addBookCancelBtn = document.querySelector("button.add-book-cancel");
+
+// Add Book button
+const addBookBtn = document.querySelector("button.add-book");
 
 // Constructor for Books
 function Book(title, author, numPages, isRead) {
@@ -106,6 +109,10 @@ function displayLibrary() {
         let deleteBtn = document.createElement("button");
         deleteBtn.setAttribute("data-attribute", i);
         deleteBtn.textContent = "Delete";
+
+        // Add event listener for removing Book row
+        deleteBtn.addEventListener("click", deleteBook);
+
         deleteDiv.appendChild(deleteBtn);
 
         bookDiv.appendChild(deleteDiv);
@@ -113,6 +120,14 @@ function displayLibrary() {
         // Append row to Books list
         bookTable.appendChild(bookDiv);
     }
+}
+
+// Delete book
+function deleteBook(event) {
+    let deleteBtn = event.currentTarget;
+    let bookIndex = deleteBtn.getAttribute("data-attribute");
+    myLibrary.splice(bookIndex, 1);
+    displayLibrary();
 }
 
 // Add a new book to array and display updated library
