@@ -21,6 +21,14 @@ function Book(title, author, numPages, isRead) {
     this.isRead = isRead;
 }
 
+Book.prototype.toggleRead = function () {
+    if (this.isRead) {
+        this.isRead = false; // Set to false if initially true
+    } else {
+        this.isRead = true; // Set to true if initially false
+    }
+}
+
 // Add a book to myLibrary array
 function addBookToLibrary(title, author, numPages, isRead) {
     const book = new Book(title, author, numPages, isRead);
@@ -95,6 +103,9 @@ function displayLibrary() {
             readLabel.textContent = "Unread";
         }
 
+        // Event listener for updating isRead
+        readCheckbox.addEventListener("change", updateIsRead);
+
         // Append read div with checkbox and label
         readDiv.appendChild(readCheckbox);
         readDiv.appendChild(readLabel);
@@ -119,6 +130,20 @@ function displayLibrary() {
 
         // Append row to Books list
         bookTable.appendChild(bookDiv);
+    }
+}
+
+// Update isRead display for a book row
+function updateIsRead(event) {
+    let bookInputID = event.currentTarget.getAttribute("id");
+    myLibrary[bookInputID.charAt(0)].toggleRead();
+
+    let readLabel = document.querySelector(`label[for="${bookIndex}"`);
+
+    if (event.currentTarget.checked) {
+        readLabel.textContent = "Read";
+    } else {
+        readLabel.textContent = "Unread";
     }
 }
 
