@@ -138,7 +138,7 @@ function updateIsRead(event) {
     let bookInputID = event.currentTarget.getAttribute("id");
     myLibrary[bookInputID.charAt(0)].toggleRead();
 
-    let readLabel = document.querySelector(`label[for="${bookIndex}"`);
+    let readLabel = document.querySelector(`label[for="${bookInputID}"`);
 
     if (event.currentTarget.checked) {
         readLabel.textContent = "Read";
