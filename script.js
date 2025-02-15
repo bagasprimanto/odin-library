@@ -105,12 +105,13 @@ function initializeMyLibrary() {
     addBookToLibrary("Filosofi Teras", "Henry Manampiring", 1120, false);
     addBookToLibrary("Sapiens", "Yuval Noah Harari", 1520, true);
 
+    // Add event listeners
+    addBookBtn.addEventListener("click", () => {
+        addBookDialog.showModal();
+    })
+
     // Display the books
     displayLibrary();
 }
 
 initializeMyLibrary();
-
-addBookBtn.addEventListener("click", () => {
-    addBookDialog.showModal();
-})
