@@ -107,7 +107,13 @@ h1 {
     align-items: center;
 }
 
-.books-list h2 {
+.books-list .top-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.books-list .top-row {
     margin-bottom: 16px;
 }
 
