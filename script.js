@@ -1,6 +1,9 @@
 // Array for storing books
 const myLibrary = [];
 
+// Book table
+const bookTable = document.querySelector(".table");
+
 // Constructor for Books
 function Book(title, author, numPages, isRead) {
     this.title = title;
@@ -23,5 +26,13 @@ function initializeMyLibrary() {
 }
 
 function displayLibrary() {
-
+    // Loop into each book
+    for (let book in myLibrary) {
+        /* 
+            1. Create a div
+            2. Set div class = book
+            3. Create div for title
+            4. Set div class = title
+        */
+    }
 }
