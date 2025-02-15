@@ -71,21 +71,73 @@ h6 {
 
 /* Styles */
 
-@font-face {
-    font-family: 'Roboto';
-    src: url('Roboto-Black.woff2') format('woff2'),
-        url('Roboto-Black.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
-
 * {
-    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+    height: 100%;
+}
+
+body {
+    padding: 16px;
+}
+
+.top-header {
+    text-align: center;
+    margin-bottom: 16px;
+}
 
 h1 {
     color: red;
     font-size: 5rem;
+}
+
+/* Books List */
+
+.books-list {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.books-list h2 {
+    margin-bottom: 16px;
+}
+
+.books-list .header {
+    background-color: rgb(206, 206, 206);
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.books-list>div.table>div {
+    /* Divide each row into 5 columns */
+    display: grid;
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+    align-items: center;
+    justify-items: center;
+}
+
+.books-list div.table div.book {
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.books-list div.table div.book:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 1px solid black;
+}
+
+.books-list>div.table>div>div {
+    /* Center the cell text */
+    text-align: center;
+    padding: 8px;
 }
