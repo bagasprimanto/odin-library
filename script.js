@@ -13,19 +13,42 @@ const addBookCancelBtn = document.querySelector("button.add-book-cancel");
 // Add Book button
 const addBookBtn = document.querySelector("button.add-book");
 
-// Constructor for Books
-function Book(title, author, numPages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.numPages = numPages;
-    this.isRead = isRead;
-}
+// Class for Books
+class Book {
+    #title;
+    #author;
+    #numPages;
+    #isRead;
 
-Book.prototype.toggleRead = function () {
-    if (this.isRead) {
-        this.isRead = false; // Set to false if initially true
-    } else {
-        this.isRead = true; // Set to true if initially false
+    constructor(title, author, numPages, isRead) {
+        this.#title = title;
+        this.#author = author;
+        this.#numPages = numPages;
+        this.#isRead = isRead;
+    }
+
+    toggleRead() {
+        if (this.#isRead) {
+            this.#isRead = false; // Set to false if initially true
+        } else {
+            this.#isRead = true; // Set to true if initially false
+        }
+    }
+
+    get title() {
+        return this.#title;
+    }
+
+    get author() {
+        return this.#author;
+    }
+
+    get numPages() {
+        return this.#numPages;
+    }
+
+    get isRead() {
+        return this.#isRead;
     }
 }
 
@@ -138,13 +161,7 @@ function updateIsRead(event) {
     let bookInputID = event.currentTarget.getAttribute("id");
     myLibrary[bookInputID.charAt(0)].toggleRead();
 
-    let readLabel = document.querySelector(`label[for="${bookInputID}"`);
-
-    if (event.currentTarget.checked) {
-        readLabel.textContent = "Read";
-    } else {
-        readLabel.textContent = "Unread";
-    }
+    displayLibrary();
 }
 
 // Delete book
